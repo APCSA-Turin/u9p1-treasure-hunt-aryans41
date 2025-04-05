@@ -44,7 +44,6 @@ public class TestGrid {
         grid.placeSprite(treasure);
         grid.placeSprite(treasure2);
         grid.placeSprite(trophy);
-        
     }
 
     @Test
@@ -200,3 +199,4 @@ public class TestGrid {
         assertEquals(player, grid.getGrid()[0][9], "Player should be  at [0][9]");
     }
 }
+    

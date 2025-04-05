@@ -8,21 +8,72 @@ public class Sprite {
         this.y = y;
     }
 
-    public int getX(){return 1;}
-    public int getY(){return 1;}
+    public int getX(){
+        return x;
+    }
 
-    public void setX(){}
-    public void setY(){}
+    public int getY(){
+        return y;
+    }
+
+    public void setX(int newX){
+        x = newX;
+    }
+
+    public void setY(int newY){
+        y = newY;
+    }
 
     public String getCoords(){ //returns the coordinates of the sprite ->"(x,y)"
-        return "";
+        return "(" + x + "," + y + ")";
     }
 
     public String getRowCol(int size){ //returns the row and column of the sprite -> "[row][col]"
-        return "[][]";
+        int column = x;
+        int row = size - y - 1;
+        return "[" + row + "]" + "[" + column + "]";
+    }
+
+    public int getRow(int size) {
+        return size - y - 1;
+    }
+
+    public int getColumn(int size) {
+        return x;
+    }
+
+    public boolean isValid(int size, String direction){ //check grid boundaries
+        if (direction.equals("w")) {
+            if (getY() == size - 1) {
+                return false;
+            } else {
+                return true;
+            }
+        }
+        if (direction.equals("a")) {
+            if (getX() == 0) {
+                return false;
+            } else {
+                return true;
+            }
+        }
+        if (direction.equals("s")) {
+            if (getY() == 0) {
+                return false;
+            } else {
+                return true;
+            }
+        }
+        if (direction.equals("d")) {
+            if (getX() == size - 1) {
+                return false;
+            } else {
+                return true;
+            }
+        }
+        return false;
     }
     
-
     public void move(String direction) { //you can leave this empty
         // Default behavior (can be overridden by subclasses)
     }
@@ -30,7 +81,4 @@ public class Sprite {
     public void interact() { //you can leave this empty
         // Default behavior (can be overridden by subclasses)
     }
-
-
-
 }

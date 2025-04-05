@@ -41,6 +41,5 @@ public class TestInheritence {
         Enemy enemy = new Enemy(5,3);
         assertEquals("Enemy:[5][5]",enemy.getRowCol(9));
     }
+} 
 
-
-}

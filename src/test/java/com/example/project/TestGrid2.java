@@ -87,4 +87,4 @@ public class TestGrid2 {
         assertTrue(player.getWin(), "Player should win after interacting with trophy");
         assertEquals(player, grid.getGrid()[0][5], "Player should be at [0][5]");
     }
-}
+} 
